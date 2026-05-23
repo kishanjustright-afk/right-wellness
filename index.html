@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rightWELLNESS â€” Precision Wellness for the Active-Aging Generation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --off-white: #F5F7FA;
+    --warm-grey: #E2E8ED;
+    --navy-dark: #00263E;
+    --navy-mid: #00456C;
+    --navy-light: #006093;
+    --teal-dark: #00666D;
+    --teal-deep: #004D52;
+    --teal-main: #008C95;
+    --soft-beige: #EAF0F4;
+    --charcoal: #0F171E;
+    --text-body: #1E2A34;
+    --text-muted: #5C6B77;
+    --border-light: rgba(0,38,62,0.08);
+    --border-medium: rgba(0,38,62,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* â”€â”€ TYPOGRAPHY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.15; }
+
+  h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); letter-spacing: -0.02em; }
+  h2 { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.015em; }
+  h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+
+  p { font-size: 1rem; font-weight: 300; color: var(--text-body); }
+
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-main);
+  }
+
+  /* â”€â”€ NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s, backdrop-filter 0.4s, padding 0.3s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  nav.scrolled {
+    background: rgba(245,247,250,0.92);
+    backdrop-filter: blur(12px);
+    padding: 1rem 4rem;
+    border-bottom: 1px solid var(--border-light);
+    text-shadow: none;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy-dark);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-logo span { color: var(--teal-main); }
+
+  nav .nav-logo img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+  }
+
+  nav.scrolled .nav-logo img {
+    filter: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav.scrolled .nav-links a {
+    color: var(--text-body);
+  }
+
+  .nav-links a:hover { color: var(--teal-main); text-shadow: none; }
+  nav.scrolled .nav-links a:hover { color: var(--navy-dark); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--off-white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy-mid) !important; }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--navy-dark);
+    transition: 0.3s;
+  }
+
+  /* â”€â”€ SECTIONS COMMON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  section { position: relative; }
+
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .section-pad { padding: 7rem 0; }
+
+  /* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 6rem;
+    background: var(--navy-dark);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Editorial hero image overlay â€” imagine: mature confident woman in elegant activewear, golden hour light, editorial photography style */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(160deg, rgba(2, 19, 29, 0.72) 0%, rgba(0,102,109,0.45) 55%, rgba(0,38,62,0.85) 100%);
+    z-index: 1;
+  }
+
+  /* Hero Image Background */
+  .hero-bg-texture {
+    position: absolute;
+    inset: 0;
+    background: url('hero.png') center/cover no-repeat;
+    z-index: 0;
+  }
+
+  /* Editorial geometric accent */
+  .hero-accent {
+    position: absolute;
+    top: 15%;
+    right: 8%;
+    width: 340px;
+    height: 480px;
+    border: 1px solid rgba(0,140,149,0.2);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-accent::before {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(0,140,149,0.12);
+  }
+
+  /* Vertical text label */
+  .hero-vertical-text {
+    position: absolute;
+    right: 3.5rem;
+    bottom: 45%;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    opacity: 0.7;
+    z-index: 3;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 4;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    width: 100%;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-eyebrow span { color: #4DD0E1; letter-spacing: 0.22em; font-size: 0.68rem; text-transform: uppercase; font-weight: 400; }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: #4DD0E1;
+  }
+
+  #hero h1 {
+    color: var(--off-white);
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  #hero h1 em {
+    font-style: italic;
+    color: #4DD0E1;
+  }
+
+  .hero-sub {
+    color: rgba(245,247,250,0.9);
+    max-width: 540px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal-main);
+    color: var(--charcoal);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+    text-shadow: none;
+  }
+
+  .btn-primary:hover { background: #00AAB5; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--off-white);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(226,232,237,0.4);
+    transition: border-color 0.25s, background 0.25s;
+    display: inline-block;
+    text-shadow: none;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(226,232,237,0.7);
+    background: rgba(226,232,237,0.07);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    z-index: 4;
+    color: var(--off-white);
+    opacity: 0.7;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(245,247,250,0.5);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; height: 40px; }
+    50% { opacity: 0.9; height: 52px; }
+  }
+
+  /* â”€â”€ MARQUEE STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .marquee-strip {
+    background: var(--navy-dark);
+    border-top: 1px solid rgba(0,140,149,0.2);
+    border-bottom: 1px solid rgba(0,140,149,0.2);
+    padding: 0.9rem 0;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,140,149,0.7);
+    font-weight: 400;
+  }
+
+  .marquee-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(0,140,149,0.45);
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* â”€â”€ INTRO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #intro {
+    background: var(--off-white);
+    padding: 8rem 0;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .intro-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--teal-main);
+  }
+
+  .intro-text h2 { color: var(--navy-dark); margin-bottom: 1.5rem; }
+
+  .intro-text p { font-size: 1.05rem; color: var(--text-body); line-height: 1.85; margin-bottom: 1.2rem; }
+
+  .intro-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: var(--border-light);
+    border: 1px solid var(--border-light);
+  }
+
+  .intro-stat {
+    background: var(--soft-beige);
+    padding: 2rem 1.8rem;
+  }
+
+  .intro-stat .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--navy-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro-stat .number sup { font-size: 1.4rem; vertical-align: super; }
+
+  .intro-stat p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* â”€â”€ PILLARS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #pillars {
+    background: var(--navy-dark);
+    padding: 7rem 0;
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .pillars-header .eyebrow { color: rgba(0,140,149,0.8); margin-bottom: 1rem; display: block; }
+
+  .pillars-header h2 { color: var(--off-white); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(0,140,149,0.2);
+  }
+
+  .pillar {
+    padding: 3.5rem 3rem;
+    border-right: 1px solid rgba(0,140,149,0.15);
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .pillar:last-child { border-right: none; }
+
+  .pillar:hover { background: rgba(0,140,149,0.05); }
+
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.18);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar h3 { color: var(--off-white); margin-bottom: 1rem; font-size: 1.6rem; }
+
+  .pillar p { color: rgba(226,232,237,0.65); font-size: 0.95rem; line-height: 1.8; }
+
+  .pillar-accent {
+    position: absolute;
+    top: 3.5rem;
+    right: 3rem;
+    width: 24px;
+    height: 1px;
+    background: var(--teal-main);
+    opacity: 0.5;
+  }
+
+  /* â”€â”€ ACTIVE AGING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #active-aging {
+    background: var(--soft-beige);
+    padding: 8rem 0;
+  }
+
+  .active-aging-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .active-aging-visual {
+    position: sticky;
+    top: 8rem;
+  }
+
+  /* Placeholder: image of mature, confident person in motion â€” warm light, editorial quality */
+  .img-block {
+    aspect-ratio: 4/5;
+    background: linear-gradient(145deg, #B0C4CC 0%, #8A9EA8 40%, #637A85 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-block .img-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,247,250,0.7);
+    font-weight: 400;
+    border-top: 1px solid rgba(245,247,250,0.3);
+    padding-top: 0.8rem;
+  }
+
+  .img-block-inner {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 40% 35%, rgba(0,140,149,0.25) 0%, transparent 60%),
+      linear-gradient(180deg, transparent 50%, rgba(0,38,62,0.6) 100%);
+  }
+
+  .active-aging-text .eyebrow { display: block; margin-bottom: 1.2rem; }
+
+  .active-aging-text h2 { color: var(--navy-dark); margin-bottom: 1.8rem; }
+
+  .active-aging-text > p { color: var(--text-body); font-size: 1.05rem; line-height: 1.85; margin-bottom: 2.5rem; }
+
+  .attributes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .attribute {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.2s;
+  }
+
+  .attribute-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(0,140,149,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .attribute-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--teal-main);
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  .attribute h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--navy-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .attribute p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* â”€â”€ PRECISION WELLNESS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #precision {
+    background: var(--off-white);
+    padding: 8rem 0;
+  }
+
+  .precision-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .precision-intro h2 { color: var(--navy-dark); }
+
+  .precision-intro p { font-size: 1rem; line-height: 1.85; color: var(--text-muted); }
+
+  .precision-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .p-card {
+    background: var(--off-white);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .p-card:hover { background: var(--soft-beige); }
+
+  .p-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--teal-main);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .p-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .p-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* â”€â”€ EDITORIAL VISUAL BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #editorial {
+    background: var(--charcoal);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .editorial-strip {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    height: 600px;
+    gap: 0;
+  }
+
+  /* Each editorial block represents a distinct image style */
+  .ed-block {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Image 1: Mature confident woman in yoga/movement pose, warm golden light, minimal background */
+  .ed-block:nth-child(1) {
+    background: linear-gradient(150deg, #001D30 0%, #003354 40%, #004978 100%);
+  }
+
+  /* Image 2: Clean premium supplement/wellness product photography on marble surface */
+  .ed-block:nth-child(2) {
+    background: linear-gradient(160deg, #0C1217 0%, #18242E 50%, #253745 100%);
+  }
+
+  /* Image 3: Clinical-inspired detail â€” microscope/lab glass â€” refined scientific aesthetic */
+  .ed-block:nth-child(3) {
+    background: linear-gradient(140deg, #0D1820 0%, #1A3045 50%, #2A4860 100%);
+  }
+
+  .ed-block-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,140,149,0.12) 0%, transparent 65%),
+      linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+  }
+
+  .ed-block-content {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    z-index: 2;
+  }
+
+  .ed-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,140,149,0.7);
+    border: 1px solid rgba(0,140,149,0.3);
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+  }
+
+  .ed-block-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: rgba(245,247,250,0.9);
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
+  /* â”€â”€ EDUCATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #education {
+    background: var(--off-white);
+    padding: 8rem 0;
+  }
+
+  .education-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .education-header h2 { color: var(--navy-dark); }
+
+  .education-header p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
+
+  .education-header a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--navy-dark);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .education-header a:hover { opacity: 0.7; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-light);
+  }
+
+  .edu-card {
+    background: var(--off-white);
+    padding: 2.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+
+  .edu-card:hover { background: var(--soft-beige); }
+
+  .edu-card:nth-child(1) { grid-column: span 2; }
+
+  .edu-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .edu-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    font-weight: 500;
+    border: 1px solid rgba(0,102,109,0.25);
+    padding: 0.25rem 0.65rem;
+  }
+
+  .edu-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .edu-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--navy-dark);
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  .edu-card:nth-child(1) h4 { font-size: 2rem; }
+
+  .edu-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
+
+  .edu-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy-dark);
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  .edu-card-arrow {
+    width: 24px;
+    height: 1px;
+    background: var(--navy-dark);
+    position: relative;
+    transition: width 0.3s;
+  }
+
+  .edu-card-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid var(--navy-dark);
+    border-top: 1px solid var(--navy-dark);
+    transform: rotate(45deg);
+  }
+
+  .edu-card:hover .edu-card-arrow { width: 36px; }
+
+  /* â”€â”€ SCIENCE TRUST BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #science-band {
+    background: var(--soft-beige);
+    padding: 6rem 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .science-band-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .science-band-left .eyebrow { display: block; margin-bottom: 1.2rem; }
+
+  .science-band-left h2 { color: var(--navy-dark); font-size: clamp(1.8rem, 3vw, 2.8rem); }
+
+  .trust-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .trust-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .trust-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal-main);
+    flex-shrink: 0;
+    margin-top: 0.6rem;
+  }
+
+  .trust-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .trust-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* â”€â”€ EXPERIENCE SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #experience {
+    background: var(--navy-dark);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .experience-bg-shape {
+    position: absolute;
+    right: -10%;
+    top: -20%;
+    width: 700px;
+    height: 700px;
+    border: 1px solid rgba(0,140,149,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .experience-bg-shape::before {
+    content: '';
+    position: absolute;
+    inset: 60px;
+    border: 1px solid rgba(0,140,149,0.07);
+    border-radius: 50%;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .experience-text .eyebrow { display: block; color: rgba(0,140,149,0.8); margin-bottom: 1.2rem; }
+
+  .experience-text h2 { color: var(--off-white); margin-bottom: 1.5rem; }
+
+  .experience-text p { color: rgba(226,232,237,0.7); font-size: 1rem; line-height: 1.85; margin-bottom: 2.5rem; }
+
+  .experience-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(0,140,149,0.2);
+  }
+
+  .exp-feature {
+    padding: 2rem;
+    border-right: 1px solid rgba(0,140,149,0.15);
+    border-bottom: 1px solid rgba(0,140,149,0.15);
+  }
+
+  .exp-feature:nth-child(2n) { border-right: none; }
+  .exp-feature:nth-child(3), .exp-feature:nth-child(4) { border-bottom: none; }
+
+  .exp-feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .exp-feature p { font-size: 0.8rem; color: rgba(226,232,237,0.55); line-height: 1.6; }
+
+  /* â”€â”€ JOURNAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #journal {
+    background: var(--off-white);
+    padding: 7rem 0;
+  }
+
+  .journal-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .journal-header .eyebrow { display: block; margin-bottom: 1rem; }
+
+  .journal-header h2 { color: var(--navy-dark); }
+
+  .journal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border-light);
+  }
+
+  .journal-card {
+    background: var(--off-white);
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+
+  .journal-card:hover { background: var(--soft-beige); }
+
+  .journal-img {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Journal card images â€” editorial wellness photography */
+  .journal-card:nth-child(1) .journal-img { background: linear-gradient(145deg, #8B7355 0%, #6B5540 60%, #4A3A2A 100%); }
+  .journal-card:nth-child(2) .journal-img { background: linear-gradient(145deg, #5A4060 0%, #3D2850 60%, #251535 100%); }
+  .journal-card:nth-child(3) .journal-img { background: linear-gradient(145deg, #6B3535 0%, #4A2020 60%, #2D1010 100%); }
+
+  .journal-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.45) 100%);
+  }
+
+  .journal-body {
+    padding: 2rem;
+  }
+
+  .journal-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .journal-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    font-weight: 500;
+  }
+
+  .journal-date { font-size: 0.7rem; color: var(--text-muted); }
+
+  .journal-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--navy-dark);
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+  }
+
+  .journal-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* â”€â”€ CTA SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #cta {
+    background: var(--soft-beige);
+    padding: 9rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg-line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(0,38,62,0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-bg-line::before {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    border: 1px solid rgba(0,38,62,0.04);
+    border-radius: 50%;
+  }
+
+  .cta-content { position: relative; z-index: 2; }
+
+  .cta-content .eyebrow { display: block; margin-bottom: 1.5rem; }
+
+  .cta-content h2 { color: var(--navy-dark); margin-bottom: 1.2rem; }
+
+  .cta-content h2 em { font-style: italic; color: var(--teal-dark); }
+
+  .cta-content p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.85; }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-dark {
+    background: var(--navy-dark);
+    color: var(--off-white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.4rem;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background 0.25s, transform 0.2s;
+  }
+
+  .btn-dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+  .btn-gold {
+    background: transparent;
+    color: var(--navy-dark);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2.4rem;
+    border-radius: 2px;
+    border: 1px solid rgba(0,38,62,0.35);
+    display: inline-block;
+    transition: border-color 0.25s, background 0.25s;
+  }
+
+  .btn-gold:hover {
+    border-color: var(--navy-dark);
+    background: rgba(0,38,62,0.05);
+  }
+
+  /* â”€â”€ CONTACT SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  #contact {
+    background: var(--charcoal);
+    padding: 7rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-info .eyebrow { display: block; color: rgba(0,140,149,0.8); margin-bottom: 1.2rem; }
+
+  .contact-info h2 { color: var(--off-white); font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 1.5rem; }
+
+  .contact-info p { color: rgba(226,232,237,0.6); line-height: 1.8; margin-bottom: 2rem; }
+
+  .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(226,232,237,0.08);
+  }
+
+  .contact-detail-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-main);
+    font-weight: 400;
+    min-width: 80px;
+    padding-top: 2px;
+  }
+
+  .contact-detail a, .contact-detail span {
+    color: rgba(226,232,237,0.75);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(226,232,237,0.5);
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(226,232,237,0.12);
+    border-radius: 2px;
+    padding: 0.85rem 1rem;
+    color: rgba(226,232,237,0.85);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: rgba(0,140,149,0.4);
+  }
+
+  .form-group select option { background: #1A1614; }
+
+  .form-group textarea { height: 120px; resize: vertical; }
+
+  .form-submit {
+    background: var(--teal-main);
+    color: var(--charcoal);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 2.4rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: #00AAB5; }
+
+  /* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  footer {
+    background: #0E0A0C;
+    padding: 4rem 0 2.5rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand .nav-logo { color: var(--off-white); font-size: 1.3rem; }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+    color: rgba(226,232,237,0.35);
+    line-height: 1.75;
+    margin-top: 1.2rem;
+    max-width: 260px;
+    font-weight: 300;
+  }
+
+  .footer-col h5 {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,140,149,0.6);
+    margin-bottom: 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .footer-col ul a {
+    font-size: 0.82rem;
+    color: rgba(226,232,237,0.4);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: rgba(226,232,237,0.75); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(226,232,237,0.22);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .footer-disclaimer {
+    max-width: 600px;
+    font-size: 0.68rem;
+    color: rgba(226,232,237,0.2);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* â”€â”€ PAGE OVERLAY SECTIONS (about, precision, etc.) */
+  .page-section {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--off-white);
+    z-index: 200;
+    overflow-y: auto;
+    animation: fadeInUp 0.5s ease;
+  }
+
+  .page-section.active { display: block; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .page-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 201;
+    background: var(--navy-dark);
+    color: var(--off-white);
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+
+  .page-close:hover { background: var(--navy-mid); }
+
+  /* â”€â”€ ANIMATIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+
+  /* â”€â”€ MOBILE NAV PANEL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .mobile-nav-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy-dark);
+    z-index: 150;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .mobile-nav-panel.open { display: flex; animation: fadeInUp 0.3s ease; }
+
+  .mobile-nav-panel a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--off-white);
+    text-decoration: none;
+    font-weight: 300;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .mobile-nav-panel a:hover { opacity: 1; }
+
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: 1px solid rgba(226,232,237,0.3);
+    color: var(--off-white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  /* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  @media (max-width: 1024px) {
+    .container { padding: 0 2.5rem; }
+    nav { padding: 1.5rem 2.5rem; }
+    nav.scrolled { padding: 1rem 2.5rem; }
+    .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .precision-cards { grid-template-columns: repeat(2, 1fr); }
+    .active-aging-grid { grid-template-columns: 1fr; }
+    .active-aging-visual { position: static; }
+    .editorial-strip { grid-template-columns: 1fr; height: auto; }
+    .ed-block { height: 300px; }
+    .experience-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 1.5rem; }
+    .section-pad { padding: 5rem 0; }
+    nav { padding: 1.2rem 1.5rem; }
+    nav.scrolled { padding: 0.9rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero-content { padding: 0 1.5rem; }
+    .hero-accent { display: none; }
+    .hero-vertical-text { display: none; }
+    .hero-scroll-hint { right: 1.5rem; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(0,140,149,0.15); }
+    .pillar:last-child { border-bottom: none; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .edu-card:nth-child(1) { grid-column: span 1; }
+    .journal-grid { grid-template-columns: 1fr; }
+    .precision-intro { grid-template-columns: 1fr; }
+    .education-header { grid-template-columns: 1fr; }
+    .science-band-grid { grid-template-columns: 1fr; }
+    .intro-stat-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; }
+    .experience-features { grid-template-columns: 1fr; }
+    .exp-feature { border-right: none; }
+    .exp-feature:nth-child(3) { border-bottom: 1px solid rgba(0,140,149,0.15); }
+    #intro { padding: 5rem 0; }
+    #active-aging { padding: 5rem 0; }
+    #precision { padding: 5rem 0; }
+    #education { padding: 5rem 0; }
+    #experience { padding: 5rem 0; }
+    #cta { padding: 6rem 0; }
+    #contact { padding: 5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- â”€â”€ NAVIGATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" style="display:flex; align-items:center;"><img src="wellnessLogo.svg" alt="rightWELLNESS" style="height: 40px; width: auto;"></a>
+  <ul class="nav-links">
+    <li><a href="#intro">About</a></li>
+    <li><a href="#active-aging">Active Aging</a></li>
+    <li><a href="#precision">Precision Wellness</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#journal">Journal</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav Panel -->
+<div class="mobile-nav-panel" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">âœ•</button>
+  <a href="#intro" class="mobile-link">About</a>
+  <a href="#active-aging" class="mobile-link">Active Aging</a>
+  <a href="#precision" class="mobile-link">Precision Wellness</a>
+  <a href="#education" class="mobile-link">Education</a>
+  <a href="#journal" class="mobile-link">Journal</a>
+  <a href="#contact" class="mobile-link">Enquire</a>
+</div>
+
+<!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="hero">
+  <div class="hero-bg-texture"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-vertical-text">Precision Wellness Â· Dubai Â· 2024</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>The Active-Aging Platform</span>
+    </div>
+    <h1>Precision Wellness<br>for the <em>Active-Aging</em><br>Generation</h1>
+    <p class="hero-sub">A premium wellness ecosystem built around longevity, recovery, metabolic balance, and everyday performance, science-informed, lifestyle-refined, and designed for modern wellbeing.</p>
+    <div class="hero-actions">
+      <a href="#precision" class="btn-primary">Explore the Approach</a>
+      <a href="#contact" class="btn-outline">Request a Consultation</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- â”€â”€ MARQUEE STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><div class="marquee-dot"></div> Longevity Culture</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Metabolic Wellness</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Active Aging</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Recovery & Performance</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Precision Protocols</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Science-Informed</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Education-Led Trust</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Premium Experience</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><div class="marquee-dot"></div> Longevity Culture</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Metabolic Wellness</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Active Aging</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Recovery & Performance</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Precision Protocols</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Science-Informed</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Education-Led Trust</div>
+    <div class="marquee-item"><div class="marquee-dot"></div> Premium Experience</div>
+  </div>
+</div>
+
+<!-- â”€â”€ INTRO / OPPORTUNITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text fade-in">
+        <div class="intro-label">
+          <span class="eyebrow">The Opportunity</span>
+        </div>
+        <h2>Where Proactive Wellness Meets Longevity Culture</h2>
+        <p>The global wellness mindset is shifting. Today’s informed, health-conscious generation is choosing to invest in vitality, recovery, and long-term wellbeing before decline begins, not after illness demands attention.
+
+rightWELLNESS was built for this moment. We exist at the intersection of metabolic balance, recovery science, everyday performance, and premium lifestyle wellness. Not a clinic. Not a pharmacy. A precision wellness ecosystem designed to support smarter daily living.</p>
+        
+      </div>
+      <div class="intro-stat-grid fade-in fade-in-delay-2">
+        <div class="intro-stat">
+          <div class="number">$1.8<sup>T</sup></div>
+          <p>Global wellness market, growing at pace with longevity awareness</p>
+        </div>
+        <div class="intro-stat">
+          <div class="number">73<sup>%</sup></div>
+          <p>Of high-net-worth individuals now prioritise proactive health investment</p>
+        </div>
+        <div class="intro-stat">
+          <div class="number">65+</div>
+          <p>Million globally engaged in premium active-aging programmes</p>
+        </div>
+        <div class="intro-stat">
+          <div class="number">3Ã—</div>
+          <p>Growth in longevity-focused wellness spend over the past decade</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ THREE PILLARS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="pillars">
+  <div class="container">
+    <div class="pillars-header fade-in">
+      <span class="eyebrow">The rightWELLNESS Promise</span>
+      <h2>Three Pillars.<br>One Coherent Vision.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar fade-in fade-in-delay-1">
+        <div class="pillar-num">01</div>
+        <div class="pillar-accent"></div>
+        <h3>Science-Informed Wellness</h3>
+        <p>Every protocol, product, and educational resource we offer is grounded in current scientific literature and peer-reviewed research. We do not make medical claims. We present informed perspectives that help you make better decisions â€” in partnership with qualified practitioners.</p>
+      </div>
+      <div class="pillar fade-in fade-in-delay-2">
+        <div class="pillar-num">02</div>
+        <div class="pillar-accent"></div>
+        <h3>Premium Lifestyle Experience</h3>
+        <p>rightWELLNESS is not a clinical platform. It is a wellness ecosystem designed for discerning individuals who expect the same refinement from their health journey that they expect from everything else in their lives. Considered aesthetics, concierge access, and a community of peers.</p>
+      </div>
+      <div class="pillar fade-in fade-in-delay-3">
+        <div class="pillar-num">03</div>
+        <div class="pillar-accent"></div>
+        <h3>Education-Led Trust</h3>
+        <p>We believe that the most powerful wellness tool is an informed client. Our Journal, Science & Education library, and personalised guidance framework are built to deepen your understanding â€” so that every choice you make is yours, made with confidence and clarity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ ACTIVE AGING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="active-aging">
+  <div class="container">
+    <div class="active-aging-grid">
+      <div class="active-aging-visual fade-in">
+        <div class="img-block">
+          <div class="img-block-inner"></div>
+          <!-- Image: Mature confident woman in elegant movement â€” yoga or walking â€” warm editorial light, minimal background, aspirational not clinical -->
+          <div class="img-caption">Active Aging â€” Editorial Wellness Photography</div>
+        </div>
+      </div>
+      <div class="active-aging-text fade-in fade-in-delay-2">
+        <span class="eyebrow">Active Aging</span>
+        <h2>Designed for Those Who Refuse to Accept Decline as Inevitable</h2>
+        <p>Active aging is not about defying reality. It is about engaging with your biology intelligently, proactively, and with grace. rightWELLNESS supports the eight pillars of sustained vitality â€” each one backed by science, refined by experience.</p>
+        <div class="attributes-list">
+          <div class="attribute">
+            <div class="attribute-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <h4>Energy & Metabolic Vitality</h4>
+              <p>Wellness-focused protocols that support cellular energy pathways and metabolic balance â€” subject to professional assessment and guidance.</p>
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="attribute-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            </div>
+            <div>
+              <h4>Mobility & Structural Integrity</h4>
+              <p>Supporting joint health, postural integrity, and freedom of movement through education-led lifestyle strategies and precision supplementation guidance.</p>
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="attribute-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div>
+              <h4>Cardiovascular & Skin Health</h4>
+              <p>Science-informed perspectives on collagen support, dermal renewal, and circulatory wellness for a resilient, energised appearance from the inside out.</p>
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="attribute-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 8v8M8 12h8" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <h4>Sleep, Recovery & Regeneration</h4>
+              <p>Restorative sleep is the foundation of every longevity protocol. We support evidence-informed approaches to sleep quality and overnight recovery biology.</p>
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="attribute-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </div>
+            <div>
+              <h4>Independence & Cognitive Clarity</h4>
+              <p>Sustained independence requires both physical and cognitive vitality. rightWELLNESS addresses the full spectrum of healthy, active longevity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ PRECISION WELLNESS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="precision">
+  <div class="container">
+    <div class="precision-intro fade-in">
+      <div>
+        <span class="eyebrow" style="display:block; margin-bottom:1.2rem;">Precision Wellness</span>
+        <h2>A Framework Built Around You, Not the Average</h2>
+      </div>
+      <div>
+        <p>Generic wellness advice fails because it ignores individuality. rightWELLNESS connects science-informed education, personalised consultative guidance, curated wellness protocols, and a premium client experience â€” all in one cohesive ecosystem.</p>
+        <p style="margin-top:1rem;">Every journey begins with understanding. Subject always to professional medical guidance and individual circumstances.</p>
+      </div>
+    </div>
+    <div class="precision-cards fade-in fade-in-delay-1">
+      <div class="p-card">
+        <div class="p-card-num">Step 01</div>
+        <h4>Education & Awareness</h4>
+        <p>Access our curated Science & Education library. Understand the biological foundations of longevity, metabolism, recovery, and precision wellness before making any decisions.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-card-num">Step 02</div>
+        <h4>Consultative Assessment</h4>
+        <p>Connect with our network of qualified wellness professionals for a personalised assessment â€” bloodwork, biomarkers, lifestyle context, and personal goals reviewed in full.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-card-num">Step 03</div>
+        <h4>Protocol Design</h4>
+        <p>Receive a wellness-focused protocol tailored to your profile â€” clinically inspired, individually calibrated, and subject to ongoing professional oversight and adjustment.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-card-num">Step 04</div>
+        <h4>Ongoing Experience</h4>
+        <p>Continuous support, community access, Journal insights, and regular reviews ensure your rightWELLNESS journey evolves with your biology, goals, and lifestyle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ EDITORIAL VISUAL BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="editorial">
+  <div class="editorial-strip">
+    <div class="ed-block">
+      <div class="ed-block-overlay"></div>
+      <!-- Image: Mature confident woman in elegant activewear, golden hour, editorial portrait photography â€” aspirational, refined, not clinical -->
+      <div class="ed-block-content">
+        <div class="ed-tag">Active Aging</div>
+        <h3>Movement, Strength &amp; Grace â€” at Every Stage</h3>
+      </div>
+    </div>
+    <div class="ed-block">
+      <div class="ed-block-overlay"></div>
+      <!-- Image: Premium wellness products on warm marble surface â€” clean, minimal, editorial product photography -->
+      <div class="ed-block-content">
+        <div class="ed-tag">Precision</div>
+        <h3>Crafted for the Discerning</h3>
+      </div>
+    </div>
+    <div class="ed-block">
+      <div class="ed-block-overlay"></div>
+      <!-- Image: Clinical-inspired laboratory glass or microscopy detail â€” refined, scientific, beautiful â€” not sterile -->
+      <div class="ed-block-content">
+        <div class="ed-tag">Science</div>
+        <h3>Research-Informed, Lifestyle-Refined</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ SCIENCE TRUST BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="science-band">
+  <div class="container">
+    <div class="science-band-grid">
+      <div class="science-band-left fade-in">
+        <span class="eyebrow">Science & Trust</span>
+        <h2>Why rightWELLNESS Earns Your Confidence</h2>
+      </div>
+      <div class="trust-list fade-in fade-in-delay-2">
+        <div class="trust-item">
+          <div class="trust-bullet"></div>
+          <div>
+            <h4>Evidence-Based Education</h4>
+            <p>All content in the rightWELLNESS Science & Education library is developed with reference to peer-reviewed research and updated as the scientific literature evolves. We present knowledge, not marketing claims.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-bullet"></div>
+          <div>
+            <h4>Professional Guidance at Every Step</h4>
+            <p>We do not operate outside professional medical boundaries. Every wellness protocol is designed to be implemented in partnership with qualified practitioners, appropriate to individual circumstances.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-bullet"></div>
+          <div>
+            <h4>Responsible Wellness Communication</h4>
+            <p>rightWELLNESS does not make disease claims, cure claims, or guarantee outcomes. Our language is intentionally responsible â€” "supports," "wellness-focused," "clinically inspired" â€” because integrity matters more than hype.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-bullet"></div>
+          <div>
+            <h4>Premium, Not Pharmaceutical</h4>
+            <p>We are a lifestyle wellness brand, not a medical provider. Our positioning is at the premium intersection of science, lifestyle, and education â€” where informed adults make better choices for their long-term vitality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ EXPERIENCE SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="experience">
+  <div class="experience-bg-shape"></div>
+  <div class="container">
+    <div class="experience-grid">
+      <div class="experience-text fade-in">
+        <span class="eyebrow">The Experience</span>
+        <h2>Wellness Without Compromise</h2>
+        <p>rightWELLNESS was conceived for those who understand that the quality of an experience is inseparable from its outcomes. Every touchpoint â€” from your first consultation to your ongoing support â€” is held to the standard of a premium, bespoke service.</p>
+        <a href="#contact" class="btn-primary" style="font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2.2rem;border-radius:2px;background:var(--teal-main);color:var(--charcoal);display:inline-block;transition:background 0.25s;">Begin Your Journey</a>
+      </div>
+      <div class="experience-features fade-in fade-in-delay-2">
+        <div class="exp-feature">
+          <div class="exp-feature-title">Concierge Consultations</div>
+          <p>Private, confidential access to qualified wellness professionals â€” by appointment, at your pace.</p>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-feature-title">Curated Protocols</div>
+          <p>Precision wellness frameworks built around your biomarkers, goals, and lifestyle â€” not a template.</p>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-feature-title">Science & Education Library</div>
+          <p>An ever-expanding resource of education-led content, expert perspectives, and research insights.</p>
+        </div>
+        <div class="exp-feature">
+          <div class="exp-feature-title">Community Access</div>
+          <p>Join a discreet network of peers committed to longevity, performance, and premium wellness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ EDUCATION CARDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="education">
+  <div class="container">
+    <div class="education-header fade-in">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:1rem;">Science & Education</span>
+        <h2>Knowledge is the Foundation of Every Protocol</h2>
+      </div>
+      <div>
+        <p>The rightWELLNESS education library is curated for the intelligent adult who wants to understand the science behind their wellness choices â€” not be sold to. Explore our most-read insights below.</p>
+        <a href="#journal">View All Insights â†’</a>
+      </div>
+    </div>
+    <div class="cards-grid fade-in fade-in-delay-1">
+      <div class="edu-card">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Foundations</span>
+          <span class="edu-card-num">01</span>
+        </div>
+        <h4>What is Precision Wellness â€” and Why Does It Matter Now?</h4>
+        <p>Precision wellness moves beyond one-size-fits-all health advice. By integrating biomarker data, lifestyle context, and individual biology, it enables personalised approaches that generic wellness cannot match. Understand the science and the philosophy behind the movement.</p>
+        <div class="edu-card-footer">
+          <span>Read More</span>
+          <div class="edu-card-arrow"></div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Longevity</span>
+          <span class="edu-card-num">02</span>
+        </div>
+        <h4>Why Active Aging is the Most Important Wellness Shift of Our Era</h4>
+        <p>The active aging movement is reshaping how we think about the decades between 45 and 80. Explore the research, the biology, and the lifestyle strategies that support sustained vitality.</p>
+        <div class="edu-card-footer">
+          <span>Read More</span>
+          <div class="edu-card-arrow"></div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Metabolism</span>
+          <span class="edu-card-num">03</span>
+        </div>
+        <h4>Metabolic Health &amp; Lifestyle: The Long Game</h4>
+        <p>Metabolic balance is the cornerstone of sustained energy, healthy body composition, and longevity. Discover how lifestyle choices interact with your metabolic biology â€” and what a science-informed approach looks like in practice.</p>
+        <div class="edu-card-footer">
+          <span>Read More</span>
+          <div class="edu-card-arrow"></div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Recovery</span>
+          <span class="edu-card-num">04</span>
+        </div>
+        <h4>Recovery, Sleep &amp; the Biology of Performance</h4>
+        <p>Sleep is not passive. It is the primary recovery mechanism of every high-performing system in your body. Explore the science of overnight regeneration and what supports it.</p>
+        <div class="edu-card-footer">
+          <span>Read More</span>
+          <div class="edu-card-arrow"></div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Future</span>
+          <span class="edu-card-num">05</span>
+        </div>
+        <h4>The Future of Longevity Culture</h4>
+        <p>From biohacking to blue zones, the longevity conversation is evolving fast. We examine emerging research, cultural shifts, and the premium wellness landscape ahead.</p>
+        <div class="edu-card-footer">
+          <span>Read More</span>
+          <div class="edu-card-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ JOURNAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="journal">
+  <div class="container">
+    <div class="journal-header fade-in">
+      <span class="eyebrow">The rightWELLNESS Journal</span>
+      <h2>Insights &amp; Perspectives</h2>
+    </div>
+    <div class="journal-grid fade-in fade-in-delay-1">
+      <div class="journal-card">
+        <div class="journal-img">
+          <!-- Image: Warm editorial wellness photography â€” morning ritual, golden light, refined -->
+          <div class="journal-img-overlay"></div>
+        </div>
+        <div class="journal-body">
+          <div class="journal-meta">
+            <span class="journal-cat">Longevity</span>
+            <span class="journal-date">May 2025</span>
+          </div>
+          <h4>The Seven Biomarkers Every Active-Ager Should Understand</h4>
+          <p>A science-informed guide to the bloodwork metrics that matter most for sustained vitality, metabolic wellness, and healthy longevity â€” and how to interpret them in context.</p>
+        </div>
+      </div>
+      <div class="journal-card">
+        <div class="journal-img">
+          <!-- Image: Premium wellness product arrangement â€” clean, editorial, lifestyle -->
+          <div class="journal-img-overlay"></div>
+        </div>
+        <div class="journal-body">
+          <div class="journal-meta">
+            <span class="journal-cat">Recovery</span>
+            <span class="journal-date">April 2025</span>
+          </div>
+          <h4>Sleep Architecture: Why the Quality of Rest Matters More Than Hours</h4>
+          <p>New research is reframing how we think about recovery. It is not simply a matter of duration â€” it is the structure, depth, and biochemistry of sleep that determines its regenerative power.</p>
+        </div>
+      </div>
+      <div class="journal-card">
+        <div class="journal-img">
+          <!-- Image: Mature confident professional in urban wellness context â€” walking, morning light -->
+          <div class="journal-img-overlay"></div>
+        </div>
+        <div class="journal-body">
+          <div class="journal-meta">
+            <span class="journal-cat">Metabolism</span>
+            <span class="journal-date">March 2025</span>
+          </div>
+          <h4>Metabolic Flexibility and the Modern Longevity Protocol</h4>
+          <p>The ability to efficiently switch between fuel sources may be one of the most underappreciated markers of metabolic health. We examine the evidence and the lifestyle strategies that support it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="cta">
+  <div class="cta-bg-line"></div>
+  <div class="container">
+    <div class="cta-content fade-in">
+      <span class="eyebrow">Begin Your Journey</span>
+      <h2>Begin Your <em>rightWELLNESS</em> Journey.</h2>
+      <p>Precision wellness is not a destination. It is a considered, ongoing relationship with your own biology â€” supported by science, guided by expertise, and refined by experience.</p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-dark">Request a Consultation</a>
+        <a href="#precision" class="btn-gold">Explore the Approach</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <span class="eyebrow">Contact & Enquiry</span>
+        <h2>Start the Conversation</h2>
+        <p>Whether you are exploring rightWELLNESS for the first time or ready to begin a precision wellness protocol, our team is here to guide you â€” with discretion, expertise, and care.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="contact-detail-label">Website</span>
+            <a href="https://right-wellness.com">right-wellness.com</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-label">Location</span>
+            <span>Dubai, United Arab Emirates</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-label">Enquiries</span>
+            <a href="mailto:hello@right-wellness.com">hello@right-wellness.com</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-label">Available</span>
+            <span>By appointment â€” global consultations available</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-in fade-in-delay-2">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Area of Interest</label>
+          <select>
+            <option value="">Select your primary interest</option>
+            <option>Active Aging Programme</option>
+            <option>Precision Wellness Consultation</option>
+            <option>Metabolic Wellness</option>
+            <option>Recovery & Performance</option>
+            <option>Science & Education Access</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us a little about your wellness goals or questions..."></textarea>
+        </div>
+        <button class="form-submit" type="button">Send Enquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="display:flex; align-items:center;"><img src="wellnessLogo.svg" alt="rightWELLNESS" style="height: 40px; width: auto; filter: brightness(0) invert(1);"></a>
+        <p>A premium precision wellness ecosystem for the active-aging generation â€” science-informed, education-led, lifestyle-refined. Content is for wellness education purposes only.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="#intro">About rightWELLNESS</a></li>
+          <li><a href="#precision">Precision Wellness</a></li>
+          <li><a href="#active-aging">Active Aging</a></li>
+          <li><a href="#experience">The Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Knowledge</h5>
+        <ul>
+          <li><a href="#education">Science & Education</a></li>
+          <li><a href="#journal">The Journal</a></li>
+          <li><a href="#education">Longevity Research</a></li>
+          <li><a href="#education">Metabolic Health</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="#contact">Request Consultation</a></li>
+          <li><a href="mailto:hello@right-wellness.com">hello@right-wellness.com</a></li>
+          <li><a href="#">Dubai, UAE</a></li>
+          <li><a href="#">right-wellness.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        Â© 2025 rightWELLNESS. All rights reserved.<br>
+        right-wellness.com Â· Dubai, United Arab Emirates
+      </div>
+      <div class="footer-disclaimer">
+        <strong style="color:rgba(226,232,237,0.3);font-weight:500;">Wellness Education Disclaimer:</strong> All content on the rightWELLNESS platform is provided for wellness education and informational purposes only. It does not constitute medical advice, diagnosis, or treatment. rightWELLNESS does not make claims to cure, treat, or reverse any medical condition. All wellness protocols are subject to professional medical guidance and individual clinical assessment. Always consult a qualified healthcare professional before beginning any wellness programme.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // â”€â”€ NAV SCROLL BEHAVIOUR
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // â”€â”€ MOBILE NAV
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileNav.classList.remove('open'));
+  });
+
+  // â”€â”€ SCROLL FADE-IN OBSERVER
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // â”€â”€ SMOOTH SCROLL FOR ALL ANCHORS
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // â”€â”€ FORM SUBMIT HANDLER
+  const submitBtn = document.querySelector('.form-submit');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function() {
+      const inputs = document.querySelectorAll('#contact input, #contact select, #contact textarea');
+      let valid = true;
+      inputs.forEach(input => {
+        if (!input.value.trim()) valid = false;
+      });
+
+      if (!valid) {
+        this.textContent = 'Please complete all fields';
+        this.style.background = 'rgba(226,232,237,0.3)';
+        setTimeout(() => {
+          this.textContent = 'Send Enquiry';
+          this.style.background = '';
+        }, 2000);
+        return;
+      }
+
+      this.textContent = 'Enquiry Received âœ“';
+      this.style.background = '#8B2E42';
+      this.style.color = '#F5F2EC';
+      setTimeout(() => {
+        this.textContent = 'Send Enquiry';
+        this.style.background = '';
+        this.style.color = '';
+        inputs.forEach(input => { input.value = ''; });
+      }, 3000);
+    });
+  }
+
+  // â”€â”€ HOVER PARALLAX ON HERO ACCENT
+  const heroAccent = document.querySelector('.hero-accent');
+  if (heroAccent) {
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 12;
+      const y = (e.clientY / window.innerHeight - 0.5) * 8;
+      heroAccent.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  }
+</script>
+</body>
+</html>
