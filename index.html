@@ -543,6 +543,7 @@
     font-weight: 400;
     border-top: 1px solid rgba(245,247,250,0.3);
     padding-top: 0.8rem;
+    z-index: 2;
   }
 
   .img-block-inner {
@@ -551,6 +552,17 @@
     background:
       radial-gradient(ellipse 70% 50% at 40% 35%, rgba(0,140,149,0.25) 0%, transparent 60%),
       linear-gradient(180deg, transparent 50%, rgba(0,38,62,0.6) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .active-aging-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 0;
   }
 
   .active-aging-text .eyebrow { display: block; margin-bottom: 1.2rem; }
@@ -701,6 +713,18 @@
     background:
       radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,140,149,0.12) 0%, transparent 65%),
       linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .ed-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
 
   .ed-block-content {
@@ -1015,6 +1039,16 @@
     position: relative;
   }
 
+  .journal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
   /* Journal card images â€” editorial wellness photography */
   .journal-card:nth-child(1) .journal-img { background: linear-gradient(145deg, #8B7355 0%, #6B5540 60%, #4A3A2A 100%); }
   .journal-card:nth-child(2) .journal-img { background: linear-gradient(145deg, #5A4060 0%, #3D2850 60%, #251535 100%); }
@@ -1024,6 +1058,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.45) 100%);
+    z-index: 1;
+    pointer-events: none;
   }
 
   .journal-body {
@@ -1481,7 +1517,7 @@
     <li><a href="#precision">Precision Wellness</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#journal">Journal</a></li>
-    <li><a href="#contact" class="nav-cta">Enquire</a></li>
+    <!-- <li><a href="#contact" class="nav-cta">Enquire</a></li> -->
   </ul>
   <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -1504,23 +1540,23 @@
   <div class="hero-bg-texture"></div>
   <div class="hero-bg"></div>
   <div class="hero-accent"></div>
-  <div class="hero-vertical-text">Precision Wellness Â· Dubai Â· 2024</div>
+  <!-- <div class="hero-vertical-text">Precision Wellness Â· Dubai Â· 2024</div> -->
 
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span>The Active-Aging Platform</span>
     </div>
     <h1>Precision Wellness<br>for the <em>Active-Aging</em><br>Generation</h1>
-    <p class="hero-sub">A premium wellness ecosystem built around longevity, recovery, metabolic balance, and everyday performance, science-informed, lifestyle-refined, and designed for modern wellbeing.</p>
+    <p class="hero-sub">A premium wellness ecosystem designed to support longevity, recovery, metabolic balance, and everyday performance — science-informed, lifestyle-refined, and built for modern wellbeing.</p>
     <div class="hero-actions">
       <a href="#precision" class="btn-primary">Explore the Approach</a>
-      <a href="#contact" class="btn-outline">Request a Consultation</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
     </div>
   </div>
 
   <div class="hero-scroll-hint">
     <div class="scroll-line"></div>
-    <span>Scroll</span>
+    <!-- <span>Scroll</span> -->
   </div>
 </section>
 
@@ -1555,28 +1591,30 @@
         <div class="intro-label">
           <span class="eyebrow">The Opportunity</span>
         </div>
-        <h2>Where Proactive Wellness Meets Longevity Culture</h2>
-        <p>The global wellness mindset is shifting. Today’s informed, health-conscious generation is choosing to invest in vitality, recovery, and long-term wellbeing before decline begins, not after illness demands attention.
+        <h2>Wellness Is Moving From Reactive Care to Proactive Living</h2>
+        <p>The global wellness mindset is changing. Today’s informed, health-conscious generation is no longer waiting for decline to begin before taking action. They are choosing to understand their bodies earlier, invest in daily vitality, and make better long-term lifestyle decisions.
 
-rightWELLNESS was built for this moment. We exist at the intersection of metabolic balance, recovery science, everyday performance, and premium lifestyle wellness. Not a clinic. Not a pharmacy. A precision wellness ecosystem designed to support smarter daily living.</p>
+rightWELLNESS was created for this shift. We bring together education, premium wellness experiences, recovery-focused support, and science-informed lifestyle concepts in one coherent ecosystem.
+
+Not a clinic. Not a pharmacy. A modern wellness platform designed for people who want to live with more clarity, energy, and confidence.</p>
         
       </div>
       <div class="intro-stat-grid fade-in fade-in-delay-2">
         <div class="intro-stat">
-          <div class="number">$1.8<sup>T</sup></div>
-          <p>Global wellness market, growing at pace with longevity awareness</p>
+          <div>Growing Wellness Demand</div>
+          <p>Consumers are shifting from reactive healthcare habits to proactive lifestyle investment.</p>
         </div>
         <div class="intro-stat">
-          <div class="number">73<sup>%</sup></div>
-          <p>Of high-net-worth individuals now prioritise proactive health investment</p>
+          <div>Shifting Consumer Priorities</div>
+          <p>73% of high-net-worth individuals now prioritise proactive health and longevity investments.</p>
         </div>
         <div class="intro-stat">
-          <div class="number">65+</div>
-          <p>Million globally engaged in premium active-aging programmes</p>
+          <div>Active-Aging Momentum</div>
+          <p>65+ million individuals globally participate in premium active-aging programmes.</p>
         </div>
         <div class="intro-stat">
-          <div class="number">3Ã—</div>
-          <p>Growth in longevity-focused wellness spend over the past decade</p>
+          <div>Growth in Longevity Focus</div>
+          <p>The longevity market has grown 3Ã— over the past decade as consumers seek preventative solutions.</p>
         </div>
       </div>
     </div>
@@ -1594,20 +1632,20 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       <div class="pillar fade-in fade-in-delay-1">
         <div class="pillar-num">01</div>
         <div class="pillar-accent"></div>
-        <h3>Science-Informed Wellness</h3>
-        <p>Every protocol, product, and educational resource we offer is grounded in current scientific literature and peer-reviewed research. We do not make medical claims. We present informed perspectives that help you make better decisions â€” in partnership with qualified practitioners.</p>
+        <h3>Science-Led Perspective</h3>
+        <p>We translate emerging wellness research into clear, responsible guidance. Every concept is presented carefully, without exaggerated claims or unnecessary complexity.</p>
       </div>
       <div class="pillar fade-in fade-in-delay-2">
         <div class="pillar-num">02</div>
         <div class="pillar-accent"></div>
         <h3>Premium Lifestyle Experience</h3>
-        <p>rightWELLNESS is not a clinical platform. It is a wellness ecosystem designed for discerning individuals who expect the same refinement from their health journey that they expect from everything else in their lives. Considered aesthetics, concierge access, and a community of peers.</p>
+        <p>Wellness should feel refined, personal, and easy to engage with. rightWELLNESS combines thoughtful design, curated experiences, and a calm client journey.</p>
       </div>
       <div class="pillar fade-in fade-in-delay-3">
         <div class="pillar-num">03</div>
         <div class="pillar-accent"></div>
-        <h3>Education-Led Trust</h3>
-        <p>We believe that the most powerful wellness tool is an informed client. Our Journal, Science & Education library, and personalised guidance framework are built to deepen your understanding â€” so that every choice you make is yours, made with confidence and clarity.</p>
+        <h3>Responsible Guidance</h3>
+        <p>We believe better decisions begin with better understanding. Our approach supports informed choices, professional oversight where required, and long-term consistency.</p>
       </div>
     </div>
   </div>
@@ -1620,22 +1658,24 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       <div class="active-aging-visual fade-in">
         <div class="img-block">
           <div class="img-block-inner"></div>
-          <!-- Image: Mature confident woman in elegant movement â€” yoga or walking â€” warm editorial light, minimal background, aspirational not clinical -->
-          <div class="img-caption">Active Aging â€” Editorial Wellness Photography</div>
+         <img src="aging.png" alt="Active Aging Editorial" class="active-aging-img" width="500px">
+          <!-- <div class="img-caption">Active Aging â€” Editorial Wellness Photography</div> -->
         </div>
       </div>
       <div class="active-aging-text fade-in fade-in-delay-2">
         <span class="eyebrow">Active Aging</span>
-        <h2>Designed for Those Who Refuse to Accept Decline as Inevitable</h2>
-        <p>Active aging is not about defying reality. It is about engaging with your biology intelligently, proactively, and with grace. rightWELLNESS supports the eight pillars of sustained vitality â€” each one backed by science, refined by experience.</p>
+        <h2>Designed for Those Who Choose to Age Actively</h2>
+        <p>Active aging is not about resisting time. It is about supporting the body intelligently through better habits, recovery, movement, nutrition, rest, and informed lifestyle choices.
+
+rightWELLNESS is designed for people who want to stay engaged, capable, and confident — with a wellness approach that respects both science and daily life.</p>
         <div class="attributes-list">
           <div class="attribute">
             <div class="attribute-icon">
               <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             <div>
-              <h4>Energy & Metabolic Vitality</h4>
-              <p>Wellness-focused protocols that support cellular energy pathways and metabolic balance â€” subject to professional assessment and guidance.</p>
+              <h4>Energy & Daily Vitality</h4>
+              <p>Support for daily energy, metabolic balance, and cognitive clarity â€” through lifestyle, recovery practices, and education-led guidance.</p>
             </div>
           </div>
           <div class="attribute">
@@ -1643,8 +1683,8 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
             </div>
             <div>
-              <h4>Mobility & Structural Integrity</h4>
-              <p>Supporting joint health, postural integrity, and freedom of movement through education-led lifestyle strategies and precision supplementation guidance.</p>
+              <h4>Mobility & Movement Confidence</h4>
+              <p>Education-led guidance around movement, posture, flexibility, and long-term physical independence.</p>
             </div>
           </div>
           <div class="attribute">
@@ -1652,8 +1692,8 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
               <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
             <div>
-              <h4>Cardiovascular & Skin Health</h4>
-              <p>Science-informed perspectives on collagen support, dermal renewal, and circulatory wellness for a resilient, energised appearance from the inside out.</p>
+              <h4>Skin & Appearance Vitality</h4>
+              <p>A wellness-led view of skin, scalp, and visible vitality through daily care and lifestyle alignment.</p>
             </div>
           </div>
           <div class="attribute">
@@ -1662,7 +1702,7 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
             </div>
             <div>
               <h4>Sleep, Recovery & Regeneration</h4>
-              <p>Restorative sleep is the foundation of every longevity protocol. We support evidence-informed approaches to sleep quality and overnight recovery biology.</p>
+              <p>Recovery-focused routines that support rest, restoration, and better daily rhythm.</p>
             </div>
           </div>
           <div class="attribute">
@@ -1671,7 +1711,7 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
             </div>
             <div>
               <h4>Independence & Cognitive Clarity</h4>
-              <p>Sustained independence requires both physical and cognitive vitality. rightWELLNESS addresses the full spectrum of healthy, active longevity.</p>
+              <p>A balanced approach to mental clarity, confidence, and sustained lifestyle independence.</p>
             </div>
           </div>
         </div>
@@ -1689,30 +1729,31 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
         <h2>A Framework Built Around You, Not the Average</h2>
       </div>
       <div>
-        <p>Generic wellness advice fails because it ignores individuality. rightWELLNESS connects science-informed education, personalised consultative guidance, curated wellness protocols, and a premium client experience â€” all in one cohesive ecosystem.</p>
-        <p style="margin-top:1rem;">Every journey begins with understanding. Subject always to professional medical guidance and individual circumstances.</p>
+        <p>Generic wellness advice often fails because it treats everyone the same. rightWELLNESS is built around a more thoughtful journey, one that begins with understanding, then moves into education, guidance, and carefully selected wellness experiences.
+
+Every journey is personal. Where professional assessment is required, it should be handled by qualified practitioners according to individual needs and local regulations.</p>
       </div>
     </div>
     <div class="precision-cards fade-in fade-in-delay-1">
       <div class="p-card">
         <div class="p-card-num">Step 01</div>
         <h4>Education & Awareness</h4>
-        <p>Access our curated Science & Education library. Understand the biological foundations of longevity, metabolism, recovery, and precision wellness before making any decisions.</p>
+        <p>Begin with clear wellness education. Understand the fundamentals of longevity, recovery, metabolism, sleep, movement, and daily vitality before making decisions.</p>
       </div>
       <div class="p-card">
         <div class="p-card-num">Step 02</div>
-        <h4>Consultative Assessment</h4>
-        <p>Connect with our network of qualified wellness professionals for a personalised assessment â€” bloodwork, biomarkers, lifestyle context, and personal goals reviewed in full.</p>
+        <h4>Personal Understanding</h4>
+        <p>Explore your goals, lifestyle, routines, preferences, and wellness priorities through a structured consultative process.</p>
       </div>
       <div class="p-card">
         <div class="p-card-num">Step 03</div>
-        <h4>Protocol Design</h4>
-        <p>Receive a wellness-focused protocol tailored to your profile â€” clinically inspired, individually calibrated, and subject to ongoing professional oversight and adjustment.</p>
+        <h4>Curated Wellness Direction</h4>
+        <p>Receive a wellness-focused direction shaped around your profile, preferences, and long-term objectives.</p>
       </div>
       <div class="p-card">
         <div class="p-card-num">Step 04</div>
-        <h4>Ongoing Experience</h4>
-        <p>Continuous support, community access, Journal insights, and regular reviews ensure your rightWELLNESS journey evolves with your biology, goals, and lifestyle.</p>
+        <h4>Ongoing Refinement</h4>
+        <p>Continue with regular review, education, and adjustment so your wellness journey evolves with your lifestyle.</p>
       </div>
     </div>
   </div>
@@ -1723,25 +1764,25 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
   <div class="editorial-strip">
     <div class="ed-block">
       <div class="ed-block-overlay"></div>
-      <!-- Image: Mature confident woman in elegant activewear, golden hour, editorial portrait photography â€” aspirational, refined, not clinical -->
+      <img src="activeaging.png" alt="">
       <div class="ed-block-content">
-        <div class="ed-tag">Active Aging</div>
-        <h3>Movement, Strength &amp; Grace â€” at Every Stage</h3>
+        <h4 style="color: white;">Active Aging</h4>
+        <h3>Movement, Strength &amp; Grace at Every Stage</h3>
       </div>
     </div>
     <div class="ed-block">
       <div class="ed-block-overlay"></div>
-      <!-- Image: Premium wellness products on warm marble surface â€” clean, minimal, editorial product photography -->
+      <img src="precision.png" alt="">
       <div class="ed-block-content">
-        <div class="ed-tag">Precision</div>
-        <h3>Crafted for the Discerning</h3>
+        <h4 style="color: white;">Precision</h4>
+        <h3 style="color: white;">Crafted for the Discerning</h3>
       </div>
     </div>
     <div class="ed-block">
       <div class="ed-block-overlay"></div>
-      <!-- Image: Clinical-inspired laboratory glass or microscopy detail â€” refined, scientific, beautiful â€” not sterile -->
+      <img src="research.png" alt="">
       <div class="ed-block-content">
-        <div class="ed-tag">Science</div>
+        <h4 style="color: white;">Science</h4>
         <h3>Research-Informed, Lifestyle-Refined</h3>
       </div>
     </div>
@@ -1755,34 +1796,35 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       <div class="science-band-left fade-in">
         <span class="eyebrow">Science & Trust</span>
         <h2>Why rightWELLNESS Earns Your Confidence</h2>
+        <p>rightWELLNESS is built on a simple principle: premium wellness should be beautiful, responsible, and informed. We combine education, careful language, refined experiences, and professional guidance where required, so every decision feels considered, not rushed.</p>
       </div>
       <div class="trust-list fade-in fade-in-delay-2">
         <div class="trust-item">
           <div class="trust-bullet"></div>
           <div>
-            <h4>Evidence-Based Education</h4>
-            <p>All content in the rightWELLNESS Science & Education library is developed with reference to peer-reviewed research and updated as the scientific literature evolves. We present knowledge, not marketing claims.</p>
+            <h4>Evidence-led Education</h4>
+            <p>Our Science & Education library is developed with reference to credible wellness, nutrition, longevity, and lifestyle research. We focus on clarity, context, and responsible interpretation — not exaggerated promises.</p>
           </div>
         </div>
         <div class="trust-item">
           <div class="trust-bullet"></div>
           <div>
-            <h4>Professional Guidance at Every Step</h4>
-            <p>We do not operate outside professional medical boundaries. Every wellness protocol is designed to be implemented in partnership with qualified practitioners, appropriate to individual circumstances.</p>
+            <h4>Guidance Where It Matters</h4>
+            <p>Every wellness journey is personal. Where assessment, protocols, or practitioner input are required, they should be guided by qualified professionals and adapted to individual circumstances.</p>
           </div>
         </div>
         <div class="trust-item">
           <div class="trust-bullet"></div>
           <div>
             <h4>Responsible Wellness Communication</h4>
-            <p>rightWELLNESS does not make disease claims, cure claims, or guarantee outcomes. Our language is intentionally responsible â€” "supports," "wellness-focused," "clinically inspired" â€” because integrity matters more than hype.</p>
+            <p>We avoid disease claims, cure claims, and guaranteed outcomes. Our language is intentionally careful because trust is built through accuracy, not hype.</p>
           </div>
         </div>
         <div class="trust-item">
           <div class="trust-bullet"></div>
           <div>
             <h4>Premium, Not Pharmaceutical</h4>
-            <p>We are a lifestyle wellness brand, not a medical provider. Our positioning is at the premium intersection of science, lifestyle, and education â€” where informed adults make better choices for their long-term vitality.</p>
+            <p>We are a lifestyle wellness brand, not a pharmacy or medical provider. Our role is to help informed adults explore better routines, experiences, and choices for long-term vitality.</p>
           </div>
         </div>
       </div>
@@ -1798,25 +1840,25 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       <div class="experience-text fade-in">
         <span class="eyebrow">The Experience</span>
         <h2>Wellness Without Compromise</h2>
-        <p>rightWELLNESS was conceived for those who understand that the quality of an experience is inseparable from its outcomes. Every touchpoint â€” from your first consultation to your ongoing support â€” is held to the standard of a premium, bespoke service.</p>
+        <p>rightWELLNESS is designed for people who expect their wellness journey to feel considered, private, and intelligently guided. From the first conversation to ongoing support, every touchpoint is shaped around clarity, comfort, and long-term vitality.</p>
         <a href="#contact" class="btn-primary" style="font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2.2rem;border-radius:2px;background:var(--teal-main);color:var(--charcoal);display:inline-block;transition:background 0.25s;">Begin Your Journey</a>
       </div>
       <div class="experience-features fade-in fade-in-delay-2">
         <div class="exp-feature">
-          <div class="exp-feature-title">Concierge Consultations</div>
-          <p>Private, confidential access to qualified wellness professionals â€” by appointment, at your pace.</p>
+          <div class="exp-feature-title">Private Consultations</div>
+          <p>Discreet access to wellness guidance through a calm, appointment-led experience tailored to your goals and lifestyle.</p>
         </div>
         <div class="exp-feature">
-          <div class="exp-feature-title">Curated Protocols</div>
-          <p>Precision wellness frameworks built around your biomarkers, goals, and lifestyle â€” not a template.</p>
+          <div class="exp-feature-title">Curated Wellness Direction</div>
+          <p>A thoughtful pathway shaped around your priorities, daily rhythm, and long-term wellbeing — not a generic template.</p>
         </div>
         <div class="exp-feature">
           <div class="exp-feature-title">Science & Education Library</div>
-          <p>An ever-expanding resource of education-led content, expert perspectives, and research insights.</p>
+          <p>Clear, responsible wellness education designed to help you understand the choices behind your journey.</p>
         </div>
         <div class="exp-feature">
-          <div class="exp-feature-title">Community Access</div>
-          <p>Join a discreet network of peers committed to longevity, performance, and premium wellness.</p>
+          <div class="exp-feature-title">Community & Continuity</div>
+          <p>A connected experience built around ongoing learning, thoughtful review, and consistent support.</p>
         </div>
       </div>
     </div>
@@ -1829,11 +1871,11 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
     <div class="education-header fade-in">
       <div>
         <span class="eyebrow" style="display:block;margin-bottom:1rem;">Science & Education</span>
-        <h2>Knowledge is the Foundation of Every Protocol</h2>
+        <h2>Knowledge That Helps You Choose Better</h2>
       </div>
       <div>
-        <p>The rightWELLNESS education library is curated for the intelligent adult who wants to understand the science behind their wellness choices â€” not be sold to. Explore our most-read insights below.</p>
-        <a href="#journal">View All Insights â†’</a>
+        <p>The rightWELLNESS education library is created for informed adults who want to understand the ideas behind modern wellness — from active aging and recovery to microbiome awareness, metabolic health, and lifestyle refinement.</p>
+        <a href="#journal">View All Insights</a>
       </div>
     </div>
     <div class="cards-grid fade-in fade-in-delay-1">
@@ -1842,8 +1884,8 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
           <span class="edu-tag">Foundations</span>
           <span class="edu-card-num">01</span>
         </div>
-        <h4>What is Precision Wellness â€” and Why Does It Matter Now?</h4>
-        <p>Precision wellness moves beyond one-size-fits-all health advice. By integrating biomarker data, lifestyle context, and individual biology, it enables personalised approaches that generic wellness cannot match. Understand the science and the philosophy behind the movement.</p>
+        <h4>What is Precision Wellness?</h4>
+        <p>A clear introduction to personalised wellness, why one-size-fits-all advice often falls short, and how lifestyle context can shape better daily choices.</p>
         <div class="edu-card-footer">
           <span>Read More</span>
           <div class="edu-card-arrow"></div>
@@ -1851,11 +1893,11 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       </div>
       <div class="edu-card">
         <div class="edu-card-meta">
-          <span class="edu-tag">Longevity</span>
+          <span class="edu-tag">ACTIVE AGING</span>
           <span class="edu-card-num">02</span>
         </div>
-        <h4>Why Active Aging is the Most Important Wellness Shift of Our Era</h4>
-        <p>The active aging movement is reshaping how we think about the decades between 45 and 80. Explore the research, the biology, and the lifestyle strategies that support sustained vitality.</p>
+        <h4>Active Aging: A Smarter Way to Think About Longevity</h4>
+        <p>Explore how movement, recovery, nutrition, sleep, and daily consistency can support vitality through every stage of life.</p>
         <div class="edu-card-footer">
           <span>Read More</span>
           <div class="edu-card-arrow"></div>
@@ -1863,11 +1905,11 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       </div>
       <div class="edu-card">
         <div class="edu-card-meta">
-          <span class="edu-tag">Metabolism</span>
+          <span class="edu-tag">METABOLIC WELLNESS</span>
           <span class="edu-card-num">03</span>
         </div>
-        <h4>Metabolic Health &amp; Lifestyle: The Long Game</h4>
-        <p>Metabolic balance is the cornerstone of sustained energy, healthy body composition, and longevity. Discover how lifestyle choices interact with your metabolic biology â€” and what a science-informed approach looks like in practice.</p>
+        <h4>Metabolic Balance and the Long Game</h4>
+        <p>Understand why energy, routine, nutrition, and lifestyle rhythm are central to long-term wellbeing and everyday performance.</p>
         <div class="edu-card-footer">
           <span>Read More</span>
           <div class="edu-card-arrow"></div>
@@ -1878,8 +1920,8 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
           <span class="edu-tag">Recovery</span>
           <span class="edu-card-num">04</span>
         </div>
-        <h4>Recovery, Sleep &amp; the Biology of Performance</h4>
-        <p>Sleep is not passive. It is the primary recovery mechanism of every high-performing system in your body. Explore the science of overnight regeneration and what supports it.</p>
+        <h4>Why Recovery Is a Wellness Priority</h4>
+        <p>Sleep, rest, and structured recovery are essential parts of a sustainable wellness lifestyle — not optional extras.</p>
         <div class="edu-card-footer">
           <span>Read More</span>
           <div class="edu-card-arrow"></div>
@@ -1887,11 +1929,11 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
       </div>
       <div class="edu-card">
         <div class="edu-card-meta">
-          <span class="edu-tag">Future</span>
+          <span class="edu-tag">BIO-WELLNESS</span>
           <span class="edu-card-num">05</span>
         </div>
-        <h4>The Future of Longevity Culture</h4>
-        <p>From biohacking to blue zones, the longevity conversation is evolving fast. We examine emerging research, cultural shifts, and the premium wellness landscape ahead.</p>
+        <h4>Microbiome, Skin, and Cellular Wellness</h4>
+        <p>A simple guide to how emerging wellness conversations connect gut health, skin vitality, cellular balance, and daily lifestyle choices.</p>
         <div class="edu-card-footer">
           <span>Read More</span>
           <div class="edu-card-arrow"></div>
@@ -1906,26 +1948,26 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
   <div class="container">
     <div class="journal-header fade-in">
       <span class="eyebrow">The rightWELLNESS Journal</span>
-      <h2>Insights &amp; Perspectives</h2>
+      <h2>Insights for a More Informed Wellness Journey</h2>
     </div>
     <div class="journal-grid fade-in fade-in-delay-1">
       <div class="journal-card">
         <div class="journal-img">
-          <!-- Image: Warm editorial wellness photography â€” morning ritual, golden light, refined -->
+          <img src="insightsaging.png" alt="" class="responsive">
           <div class="journal-img-overlay"></div>
         </div>
         <div class="journal-body">
           <div class="journal-meta">
-            <span class="journal-cat">Longevity</span>
+            <span class="journal-cat">ACTIVE AGING</span>
             <span class="journal-date">May 2025</span>
           </div>
-          <h4>The Seven Biomarkers Every Active-Ager Should Understand</h4>
-          <p>A science-informed guide to the bloodwork metrics that matter most for sustained vitality, metabolic wellness, and healthy longevity â€” and how to interpret them in context.</p>
+          <h4>The New Language of Active Aging</h4>
+          <p>A practical look at how movement, recovery, nutrition, and daily rhythm are reshaping the way people think about vitality across every stage of life.</p>
         </div>
       </div>
       <div class="journal-card">
         <div class="journal-img">
-          <!-- Image: Premium wellness product arrangement â€” clean, editorial, lifestyle -->
+          <img src="recovery.png" alt="" class="responsive">
           <div class="journal-img-overlay"></div>
         </div>
         <div class="journal-body">
@@ -1933,22 +1975,22 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
             <span class="journal-cat">Recovery</span>
             <span class="journal-date">April 2025</span>
           </div>
-          <h4>Sleep Architecture: Why the Quality of Rest Matters More Than Hours</h4>
-          <p>New research is reframing how we think about recovery. It is not simply a matter of duration â€” it is the structure, depth, and biochemistry of sleep that determines its regenerative power.</p>
+          <h4>Why Rest Is a Performance Strategy</h4>
+          <p>Recovery is more than downtime. Learn how sleep quality, nervous-system balance, and better routines support energy, clarity, and long-term wellbeing.</p>
         </div>
       </div>
       <div class="journal-card">
         <div class="journal-img">
-          <!-- Image: Mature confident professional in urban wellness context â€” walking, morning light -->
+         <img src="metawellness.png" alt="" class="responsive">
           <div class="journal-img-overlay"></div>
         </div>
         <div class="journal-body">
           <div class="journal-meta">
-            <span class="journal-cat">Metabolism</span>
+            <span class="journal-cat">METABOLIC WELLNESS</span>
             <span class="journal-date">March 2025</span>
           </div>
-          <h4>Metabolic Flexibility and the Modern Longevity Protocol</h4>
-          <p>The ability to efficiently switch between fuel sources may be one of the most underappreciated markers of metabolic health. We examine the evidence and the lifestyle strategies that support it.</p>
+          <h4>Metabolic Balance in Everyday Life</h4>
+          <p>Understand how food timing, movement, rest, and lifestyle consistency can support daily energy and a more resilient wellness foundation.</p>
         </div>
       </div>
     </div>
@@ -1962,9 +2004,9 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
     <div class="cta-content fade-in">
       <span class="eyebrow">Begin Your Journey</span>
       <h2>Begin Your <em>rightWELLNESS</em> Journey.</h2>
-      <p>Precision wellness is not a destination. It is a considered, ongoing relationship with your own biology â€” supported by science, guided by expertise, and refined by experience.</p>
+      <p>A considered wellness experience designed around your goals, lifestyle, and long-term vitality, guided by education, refined by expertise, and supported by responsible science.</p>
       <div class="cta-actions">
-        <a href="#contact" class="btn-dark">Request a Consultation</a>
+        <a href="#contact" class="btn-dark">Reach us</a>
         <a href="#precision" class="btn-gold">Explore the Approach</a>
       </div>
     </div>
@@ -1982,7 +2024,7 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
         <div class="contact-details">
           <div class="contact-detail">
             <span class="contact-detail-label">Website</span>
-            <a href="https://right-wellness.com">right-wellness.com</a>
+            <a href="www.right-wellness.com">www.right-wellness.com</a>
           </div>
           <div class="contact-detail">
             <span class="contact-detail-label">Location</span>
@@ -1990,11 +2032,11 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
           </div>
           <div class="contact-detail">
             <span class="contact-detail-label">Enquiries</span>
-            <a href="mailto:hello@right-wellness.com">hello@right-wellness.com</a>
+            <a href="mailto:nilesh.jain@rightwellness.com">nilesh.jain@rightwellness.com</a>
           </div>
           <div class="contact-detail">
             <span class="contact-detail-label">Available</span>
-            <span>By appointment â€” global consultations available</span>
+            <span>By appointment - global consultations available</span>
           </div>
         </div>
       </div>
@@ -2059,7 +2101,7 @@ rightWELLNESS was built for this moment. We exist at the intersection of metabol
         <h5>Connect</h5>
         <ul>
           <li><a href="#contact">Request Consultation</a></li>
-          <li><a href="mailto:hello@right-wellness.com">hello@right-wellness.com</a></li>
+          <li><a href="nilesh.jain@rightwellness.com">nilesh.jain@rightwellness.com</a></li>
           <li><a href="#">Dubai, UAE</a></li>
           <li><a href="#">right-wellness.com</a></li>
         </ul>
